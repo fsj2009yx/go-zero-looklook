@@ -76,7 +76,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - ./data/es/data:/usr/share/elasticsearch/data
+      - esdata:/usr/share/elasticsearch/data
       - ./data/es/plugins:/usr/share/elasticsearch/plugins
     networks:
       - looklook_net
@@ -223,6 +223,9 @@ services:
     networks:
       - looklook_net
 
+
+volumes:
+  esdata:
 
 networks:
   looklook_net:
